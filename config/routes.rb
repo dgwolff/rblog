@@ -74,12 +74,6 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    get 'categories/show'
-  end
-
-  get 'categories/show'
-
-  namespace :admin do
     get 'posts/new'
   end
 
