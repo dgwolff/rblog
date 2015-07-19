@@ -2,12 +2,11 @@
 <html>
 <head>
   <title>RBlog</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'admin/application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'admin/application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
 <div class="navbar navbar-default" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -17,13 +16,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-         <a class="navbar-brand" href="index.html"><h1>rBlog</h1></a>
+         <a class="navbar-brand" href="index.html"><h1>rBlog<span>/Manager</span></h1></a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><%= link_to "Home", root_path %></li>
-            <li><%= link_to "About", about_path %></li>
-            <li><%= link_to "Contact", contact_path %></li>
+            <li class="<%= params[:controller] == 'admin/posts' ? 'active' : '' %>"><%= link_to "Posts", admin_posts_path %></li>
+            <li class="<%= params[:controller] == 'admin/categories' ? 'active' : '' %>"><%= link_to "Categories", admin_categories_path %></li>
+            <li class="<%= params[:controller] == 'admin/users' ? 'active' : '' %>"><%= link_to "Users", admin_users_path %></li>
           </ul>
           <form class="search-form navbar-form navbar-right" role="search">
         <div class="form-group">
@@ -38,25 +37,26 @@
     <section>
       <div class="container">
         <div class="row">
-          <div class="col-md-8">
-          	<!-- Alerts & Messages -->
-            <% if flash[:notice] %>
-              <div class="alert alert-success"><%= flash[:notice] %></div>
-            <% end %>
+          <div class="col-md-12">
+            <div class="well">
+              <!-- Alerts & Messages -->
+              <% if flash[:notice] %>
+                <div class="alert alert-success"><%= flash[:notice] %></div>
+              <% end %>
 
-            <% if flash[:alert] %>
-              <div class="alert alert-danger"><%= flash[:alert] %></div>
-            <% end %>
-           	<%= yield %>
-          </div>
-          <div class="col-md-4">
-            <%= render 'partials/sidebar' %>
+              <% if flash[:alert] %>
+                <div class="alert alert-danger"><%= flash[:alert] %></div>
+              <% end %>
+              <%= yield %>
+            </div>
           </div>
         </div>
       </div>
     </section>
    
-    <%= render 'partials/footer' %>
+    <footer>
+      <p>Copyright &copy; 2014, rBlog | <a href="login.html">Admin Login</a></p>
+    </footer>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
