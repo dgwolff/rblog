@@ -1,14 +1,8 @@
 <h2>Add New User</h2>
 
-<%= form_for [:admin, @user] do |f| %>
-	<!-- Check for errors -->
-	<% if @user.errors.any? %>
-	    <% @user.errors.full_messages.each do |msg| %>
-	    	<!-- Show errors -->
-	      	<div class="alert alert-danger"><%= msg %></div>
-	    <% end %>
-  	<% end %>
+<%= render "partials/errors", obj: @category %>
 
+<%= form_for [:admin, @user] do |f| %>
 	<div class="form-group">
 		<%= f.label :name %>
 		<%= f.text_field :name ,class:'form-control' %>
