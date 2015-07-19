@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'posts#index'
 
-  get 'contacts' => 'contacts#new'
+  get 'contact' => 'contacts#new'
 
   get 'contacts/create'
 
