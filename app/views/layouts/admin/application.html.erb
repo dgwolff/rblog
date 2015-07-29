@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  
+
   <div class="navbar navbar-default" role="navigation">
     <div class="container">
       <div class="navbar-header">
@@ -36,12 +36,14 @@
   </div>
 
     <section>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="well">
-            <!-- Alerts & Messages -->
-            <%= render 'layouts/messages' %>
-            <%= yield %>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="well">
+              <!-- Alerts & Messages -->
+              <%= render 'layouts/messages' %>
+              <%= yield %>
+            </div>
           </div>
         </div>
       </div>
