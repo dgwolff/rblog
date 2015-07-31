@@ -16,6 +16,11 @@
         </tr>
       <% end %>
   </table>
+
+  <div id="pagination-container">
+    <%= will_paginate @posts %>
+  </div>
+
 <% else %>
     <p>There are no posts</p>
 <% end %>

@@ -13,6 +13,7 @@ gem 'autoprefixer-rails', '~> 5.2.1'
 gem 'bcrypt'
 gem 'mail_form'
 gem 'simple_form'
+gem 'bootstrap-will_paginate'
 
 group :development, :test do
   gem 'byebug'

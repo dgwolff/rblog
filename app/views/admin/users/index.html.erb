@@ -16,6 +16,11 @@
     	</tr>
 	<% end %>
   </table>
+
+  <div id="pagination-container">
+    <%= will_paginate @users %>
+  </div>
+
 <% else %>
 	<p>There are no users</p>
 <% end %>

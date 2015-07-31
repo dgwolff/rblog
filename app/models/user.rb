@@ -8,4 +8,8 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { minimum: 6 }, on: :create
 
   validates_confirmation_of :password
+
+  def self.search(query)
+    where("name like ? OR email like ?", "%#{query}%", "%#{query}%")
+  end
 end

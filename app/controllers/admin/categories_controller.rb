@@ -36,7 +36,13 @@ class Admin::CategoriesController < Admin::ApplicationController
   end
 
   def index
-    @categories = Category.all
+    if params[:search]
+      @categories = Category.search(params[:search]).all.order("name ASC")
+                    .paginate(per_page: 10, page: params[:page])
+    else
+      @categories = Category.all.order("name ASC")
+                    .paginate(per_page: 10, page: params[:page])
+    end
   end
 
   private
