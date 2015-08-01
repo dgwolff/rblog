@@ -45,5 +45,11 @@
 
     <%= render 'partials/footer' %>
 
+    <% if Rails.env.development? %>
+      <div class="debug col-md-8 col-md-offset-2">
+        <%= debug(params)%>
+      </div>
+    <% end %>
+
 </body>
 </html>

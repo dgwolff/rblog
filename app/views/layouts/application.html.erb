@@ -31,7 +31,7 @@
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-      </div><!--/.nav-collapse -->
+      </div>
     </div>
   </div>
 
@@ -46,7 +46,6 @@
       </div>
       <div class="row">
         <div class="col-md-8">
-        	<!-- Alerts & Messages -->
           <%= render 'layouts/messages' %>
          	<%= yield %>
         </div>
@@ -58,6 +57,12 @@
   </section>
 
 <%= render 'partials/footer' %>
+
+<% if Rails.env.development? %>
+  <div class="debug col-md-8 col-md-offset-2">
+    <%= debug(params)%>
+  </div>
+<% end %>
 
 </body>
 </html>
