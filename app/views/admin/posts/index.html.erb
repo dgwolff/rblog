@@ -1,4 +1,4 @@
-<h2 class="page-header">Posts <%=link_to "Create New", new_admin_post_path, class:'btn btn-success pull-right' %></h2>
+<h2 class="page-header">Posts <%=link_to "Create New", new_admin_post_path, class:"btn btn-success pull-right" %></h2>
 <% if @posts.exists? %>
   <table class="table table-striped">
     <tr>
@@ -11,8 +11,8 @@
       <tr>
             <td><%= post.title %></td>
             <td><%= post.category.name %></td>
-            <td><%= post.created_at.to_time.strftime('%B %e at %l:%M %p') %>
-            <td><%=link_to "Edit", edit_admin_post_path(post), class:'btn btn-primary' %> <%=link_to "Delete", admin_post_path(post), class:'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= post.created_at.to_time.strftime("%B %e at %l:%M %p") %>
+            <td><%=link_to "Edit", edit_admin_post_path(post), class:"btn btn-primary" %> <%=link_to "Delete", admin_post_path(post), class:"btn btn-danger", method: :delete, data: { confirm: "Are you sure?" } %></td>
         </tr>
       <% end %>
   </table>

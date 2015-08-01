@@ -7,6 +7,11 @@ class Post < ActiveRecord::Base
   validates :category_id, presence: true
   validates :body, presence: true
 
+  has_attached_file :image, default_url: ":style/rails1.jpg"
+  validates_attachment :image, content_type: { content_type: ["image/jpeg",
+                                                              "image/gif",
+                                                              "image/png"] }
+
   def self.search(query)
     where("title like ? OR body like ?", "%#{query}%", "%#{query}%")
   end

@@ -14,6 +14,9 @@ gem 'bcrypt'
 gem 'mail_form'
 gem 'simple_form'
 gem 'bootstrap-will_paginate'
+gem 'paperclip', '~> 4.3'
+gem 'wysiwyg-rails'
+gem 'font-awesome-rails'
 
 group :development, :test do
   gem 'byebug'
