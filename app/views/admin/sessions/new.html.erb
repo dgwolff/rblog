@@ -1,2 +1,13 @@
-<h1>Admin::Sessions#new</h1>
-<p>Find me in app/views/admin/sessions/new.html.erb</p>
+<div class="col-md-4 col-md-offset-4">
+  <h2>RBlog</h2>
+  <%= render 'layouts/messages' %>
+  <%= form_tag admin_sessions_path do %>
+    <div class="form-group">
+      <%= text_field_tag :email, params[:email], class: "form-control", placeholder: "Email" %>
+    </div>
+    <div class="form-group">
+      <%= password_field_tag :password, "", class: "form-control", placeholder: "Pasword" %>
+    </div>
+    <%= submit_tag "Login", class: "btn btn-primary btn block" %>
+  <% end %>
+</div>
