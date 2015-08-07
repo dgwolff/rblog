@@ -26,30 +26,43 @@
           <li class="<%= params[:controller] == 'admin/users' ? 'active' : '' %>"><%= link_to "Users", admin_users_path %></li>
         </ul>
         <%= render 'partials/admin/search' %>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%= current_user.email %> <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li>
+                <%= link_to admin_logout_path do %>
+                  <i class="glyphicon glyphicon-remove-circle"></i>
+                    Logout
+                <% end %>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
 
-    <section>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="well">
-              <%= render 'layouts/messages' %>
-              <%= yield %>
-            </div>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <%= render 'layouts/messages' %>
+          <div class="well">
+            <%= yield %>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <%= render 'partials/footer' %>
+  <%= render 'partials/footer' %>
 
-    <% if Rails.env.development? %>
-      <div class="debug col-md-8 col-md-offset-2">
-        <%= debug(params)%>
-      </div>
-    <% end %>
+  <% if Rails.env.development? %>
+    <div class="debug col-md-8 col-md-offset-2">
+      <%= debug(params)%>
+    </div>
+  <% end %>
 
 </body>
 </html>

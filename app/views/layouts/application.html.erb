@@ -32,16 +32,9 @@
 
   <section>
     <div class="container">
-      <div class="jumbotron">
-        <h1>Navbar example</h1>
-        <p>This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-        <p>
-          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-        </p>
-      </div>
       <div class="row">
+        <%= render 'layouts/messages' %>
         <div class="col-md-8">
-          <%= render 'layouts/messages' %>
          	<%= yield %>
         </div>
         <div class="col-md-4">
@@ -51,13 +44,13 @@
     </div>
   </section>
 
-<%= render 'partials/footer' %>
+  <%= render 'partials/footer' %>
 
-<% if Rails.env.development? %>
-  <div class="debug col-md-8 col-md-offset-2">
-    <%= debug(params)%>
-  </div>
-<% end %>
+  <% if Rails.env.development? %>
+    <div class="debug col-md-8 col-md-offset-2">
+      <%= debug(params)%>
+    </div>
+  <% end %>
 
 </body>
 </html>
