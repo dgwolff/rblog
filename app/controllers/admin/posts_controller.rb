@@ -1,6 +1,6 @@
 class Admin::PostsController < Admin::ApplicationController
   before_action :logged_in?
-  
+
   def new
     @page_title = "Add Post"
     @post = Post.new
@@ -20,11 +20,11 @@ class Admin::PostsController < Admin::ApplicationController
   end
 
   def edit
-    @post = Post.find_by(params[:id])
+    @post = Post.find(params[:id])
   end
 
   def update
-    @post = Post.find_by(params[:id])
+    @post = Post.find(params[:id])
 
     @post.image = nil if params[:post][:image].blank?
 
