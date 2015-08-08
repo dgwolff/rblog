@@ -4,6 +4,11 @@
   margin-left: 15px;
 }
 
+// Table display
+.table > tbody > tr > td {
+  vertical-align: middle;
+}
+
 // Posts
 .post .btn {
   display: block;
