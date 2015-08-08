@@ -17,7 +17,7 @@ class Admin::ApplicationController < ActionController::Base
   end
 
   def access_denied
-    flash[:danger] = "You don't have permission to do that"
-    redirect_to root_path
+    flash[:danger] = "Please login first"
+    redirect_to admin_login_path
   end
 end
