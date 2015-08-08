@@ -1,3 +1,7 @@
 <footer>
-  <p>Copyright &copy; 2015, rBlog | <%= link_to "Frontend", root_path %></p>
+  <% if params[:controller] == "admin/users" || params[:controller] == "admin/categories" || params[:controller] == "admin/posts" %>
+    <p>Copyright &copy; 2015, rBlog | <%= link_to "Frontend", root_path %></p>
+  <% else %>
+    <p>Copyright &copy; 2015, rBlog | <%= link_to "Admin", admin_posts_path %></p>
+  <% end %>
 </footer>
