@@ -4,6 +4,11 @@
   margin-left: 15px;
 }
 
+// Prevent textarea expanding outside parent
+textarea.form-control {
+    max-width: 100%;
+}
+
 // Table display
 .table > tbody > tr > td {
   vertical-align: middle;
