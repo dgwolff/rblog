@@ -1,4 +1,4 @@
-<h2><%= @category.name %></h2>
+<h2 class="category-title"><%= @category.name %></h2>
 <div id="posts-index">
   <% if @posts.exists? %>
     <% @posts.each_slice(2) do |post| %>
