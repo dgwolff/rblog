@@ -1,5 +1,5 @@
 <div class="comments">
-  <h2 class="page-header">Comments</h2>
+  <h2 class="page-title">Comments</h2>
   <% @post.comments.each do |comment| %>
   <div class="comment">
     <div class="row">
@@ -17,7 +17,7 @@
   <% end %>
 
   <div class="well add-comment">
-    <h2 class="page-header">Add Comment</h2>
+    <h2 class="page-title">Add Comment</h2>
     <%= form_for([@post, @post.comments.build]) do |f| %>
 
       <div class="form-group">

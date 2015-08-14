@@ -1,3 +1,4 @@
+//GENERAL STYLES
 // Error messages
 .errors {
   margin-top: 10px;
@@ -22,6 +23,23 @@ textarea.form-control {
 
 .comments img {
   width: 100%;
+}
+
+.page-title {
+  padding-bottom: 9px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.post-meta {
+  margin-bottom: 10px;
+}
+
+.post-image {
+  margin-bottom: 20px;
+}
+
+.post-body {
+
 }
 
 // Pagination
