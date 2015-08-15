@@ -1,25 +1,30 @@
 <div class="comments">
   <h2 class="page-title">Comments</h2>
-  <% @post.comments.each do |comment| %>
-  <div class="comment">
-    <div class="row">
-      <div class="col-md-2">
-        <%= image_tag("user.jpg") %>
-      </div>
-      <div class="col-md-10">
-        <div class="well">
-          <h4><%= comment.name %><span><%= comment.created_at.to_time.strftime('%B %e at %l:%M %p') %></span></h4>
-          <%= comment.body %>
+
+  <% if @post.comments.exists? %>
+    <% @post.comments.each do |comment| %>
+      <div class="comment">
+        <div class="row">
+          <div class="col-md-2">
+            <%= image_tag("user.jpg") %>
+          </div>
+          <div class="col-md-10">
+            <div class="well">
+              <p><%= comment.body %></p>
+              <small>Posted by <%= comment.name %> at <%= comment.created_at %></small>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+    <% end %>
   <% end %>
 
   <div class="well add-comment">
     <h2 class="page-title">Add Comment</h2>
-    <%= form_for([@post, @post.comments.build]) do |f| %>
 
+    <%= render "partials/errors", obj: @comment %>
+
+    <%= form_for([@post, @post.comments.build]) do |f| %>
       <div class="form-group">
         <%= f.label :name %><br>
         <%= f.text_field :name, class:'form-control' %>

@@ -2,8 +2,13 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(comment_params)
-    flash[:notice] = "Comment added"
-    redirect_to post_path(@post)
+
+    if @comment.save
+      flash[:notice] = "Comment added"
+      redirect_to post_path(@post)
+    else
+      render "posts/show"
+    end
   end
 
   private
